@@ -29,17 +29,15 @@ Built as part of an assignment for Alex (college student persona).
 - **Tailwind CSS (CDN)**
 - **Open Library Search API**:  
   `https://openlibrary.org/search.json?title={bookTitle}`
-
 ---
 
 ##👨‍💻 Author
-
-Developed by Shiva Prasad R
-Using React + Open Library API
-
+---
+Developed by Shiva Prasad R.
+Using React + Open Library API.
 
 ##🌍 Deployment
-
+---
 Can be deployed on StackBlitz / CodeSandbox easily.
 Or push to GitHub and deploy on Netlify or Vercel (free).
 
