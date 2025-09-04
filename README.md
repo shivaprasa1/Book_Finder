@@ -1,2 +1,51 @@
-# Book_Finder
-📚 Book Finder App  A simple book search application built for Alex (college student persona) who wants to quickly find books by title, author, ISBN, or subject using the Open Library API.
+
+# 📚 Book Finder App
+
+A simple React application for searching books using the **Open Library API**.  
+Built as part of an assignment for Alex (college student persona).  
+
+---
+
+## 🚀 Features
+
+- Search books by:
+  - Title
+  - Author
+  - ISBN
+  - Subject
+  - Free text
+- Book covers displayed (via Open Library cover API).
+- Pagination support.
+- Sort by title or year.
+- View book details in a modal.
+- Favorite books (saved to localStorage).
+- Simple, clean UI using Tailwind CSS.
+
+---
+
+## 🛠️ Tech Stack
+
+- **React (Vite)**
+- **Tailwind CSS (CDN)**
+- **Open Library Search API**:  
+  `https://openlibrary.org/search.json?title={bookTitle}`
+
+---
+
+## 📦 Installation & Setup
+```bash
+# Clone the repo
+git clone https://github.com/YOUR_USERNAME/book-finder.git
+cd book-finder
+
+# Install dependencies
+npm install
+
+# Run development server
+npm run dev
+
+#The app will be available at 👉 http://localhost:5173
+
+
+
+
