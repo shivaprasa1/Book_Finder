@@ -32,8 +32,19 @@ Built as part of an assignment for Alex (college student persona).
 
 ---
 
+##👨‍💻 Author
+
+Developed by Shiva Prasad R
+Using React + Open Library API
+
+
+##🌍 Deployment
+
+Can be deployed on StackBlitz / CodeSandbox easily.
+Or push to GitHub and deploy on Netlify or Vercel (free).
+
 ## 📦 Installation & Setup
-```bash
+```
 # Clone the repo
 git clone https://github.com/YOUR_USERNAME/book-finder.git
 cd book-finder
@@ -44,7 +55,10 @@ npm install
 # Run development server
 npm run dev
 
-#The app will be available at 👉 http://localhost:5173
+#The app will be available at 👉 http://localhost:5173 ```
+
+
+
 
 
 
