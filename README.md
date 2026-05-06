@@ -2,7 +2,7 @@
 # 📚 Book Finder App
 
 A simple React application for searching books using the **Open Library API**.  
-Built as part of an assignment for Alex (college student persona).  
+Built as part of an assignment for College students.
 
 ---
 
