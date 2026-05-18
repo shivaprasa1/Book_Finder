@@ -61,7 +61,8 @@ Accessibility
 */
 
 import React, { useEffect, useMemo, useRef, useState } from 'react'
-
+import { auth } from './firebase'
+import { signOut } from 'firebase/auth'
 const PER_PAGE = 20
 const OPENLIB_BASE = 'https://openlibrary.org'
 
@@ -137,7 +138,7 @@ function useLocalStorage(key, initial) {
 }
 
 // Main App -----------------------------------------------------
-export default function App() {
+export default function Home() {
   const [mode, setMode] = useState('title') // title | author | isbn | subject | all
   const [query, setQuery] = useState('')
   const [docs, setDocs] = useState([])
@@ -284,6 +285,13 @@ export default function App() {
               aria-label="Toggle favorites"
             >
               ❤ Favorites ({favs.length})
+            </button>
+            <button
+              onClick={() => signOut(auth)}
+              className="px-3 py-1.5 rounded-xl border border-slate-200 bg-rose-50 hover:bg-rose-100 text-rose-600 shadow-sm"
+              aria-label="Sign Out"
+            >
+              Sign Out
             </button>
             <a
               className="px-3 py-1.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 shadow-sm"
