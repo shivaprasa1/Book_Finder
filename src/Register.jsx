@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { auth } from './firebase';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { Link, useNavigate } from 'react-router-dom';
 
 export default function Register() {
@@ -19,10 +17,21 @@ export default function Register() {
     setLoading(true);
     setError('');
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
-      navigate('/');
+      const response = await fetch('http://localhost:5000/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
+      });
+      
+      const data = await response.json();
+      
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to register');
+      }
+
+      navigate('/login');
     } catch (err) {
-      setError('Failed to register. ' + err.message);
+      setError(err.message);
     } finally {
       setLoading(false);
     }

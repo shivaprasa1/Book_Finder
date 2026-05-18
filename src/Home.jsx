@@ -61,8 +61,6 @@ Accessibility
 */
 
 import React, { useEffect, useMemo, useRef, useState } from 'react'
-import { auth } from './firebase'
-import { signOut } from 'firebase/auth'
 const PER_PAGE = 20
 const OPENLIB_BASE = 'https://openlibrary.org'
 
@@ -287,7 +285,10 @@ export default function Home() {
               ❤ Favorites ({favs.length})
             </button>
             <button
-              onClick={() => signOut(auth)}
+              onClick={() => {
+                localStorage.removeItem('user');
+                window.location.href = '/login';
+              }}
               className="px-3 py-1.5 rounded-xl border border-slate-200 bg-rose-50 hover:bg-rose-100 text-rose-600 shadow-sm"
               aria-label="Sign Out"
             >

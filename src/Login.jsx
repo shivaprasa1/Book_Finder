@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { auth } from './firebase';
-import { signInWithEmailAndPassword } from 'firebase/auth';
 import { Link, useNavigate } from 'react-router-dom';
 
 export default function Login() {
@@ -15,10 +13,23 @@ export default function Login() {
     setLoading(true);
     setError('');
     try {
-      await signInWithEmailAndPassword(auth, email, password);
-      navigate('/');
+      const response = await fetch('http://localhost:5000/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
+      });
+      
+      const data = await response.json();
+      
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to login');
+      }
+
+      localStorage.setItem('user', JSON.stringify(data.user));
+      // Force reload to update App.jsx state
+      window.location.href = '/';
     } catch (err) {
-      setError('Failed to login. Check your credentials.');
+      setError(err.message);
     } finally {
       setLoading(false);
     }
